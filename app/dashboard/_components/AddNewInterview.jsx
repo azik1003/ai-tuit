@@ -19,6 +19,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { useUser } from '@clerk/nextjs'
 import moment from 'moment'
 import { useRouter } from 'next/navigation'
+// Import AIModelFactory from the utils folder
+import { AIModelFactory } from '@/utils/AIModelFactory';
 
 function AddNewInterview() {
     const [openDailog,setOpenDailog]=useState(false)
