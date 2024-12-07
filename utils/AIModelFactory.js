@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
+require("dotenv").config();
 
 class AIModel {
     async sendMessage(prompt) {
@@ -38,7 +39,7 @@ class ChatGPT extends AIModel {
         console.log("Using ChatGPT Model");
         try {
             const response = await this.openai.createChatCompletion({
-                model: "gpt-4", // Switch to "gpt-3.5-turbo" for a cheaper option
+                model: "gpt-4", // You can switch to "gpt-3.5-turbo" for a cheaper option
                 messages: [
                     { role: "system", content: "You are an AI that generates interview questions and answers in JSON format." },
                     { role: "user", content: prompt },
@@ -62,3 +63,7 @@ class AIModelFactory {
 }
 
 export { AIModelFactory, GeminiAI, ChatGPT };
+
+// Example usage:
+const aiModel = AIModelFactory.createAIModel("chatgpt", process.env.OPENAI_API_KEY);
+aiModel.sendMessage("What's the weather like today?").then(console.log);
