@@ -1,13 +1,10 @@
 // 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
 
 
-
 const { Configuration, OpenAIApi } = require("openai");
 
 // Initialize OpenAI API
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY, // Store your API key in environment variables
-});
+
 const openai = new OpenAIApi(configuration);
 
 // Generate Questions and Answers
@@ -33,3 +30,4 @@ async function generateQnA(topic) {
 }
 
 // Example Usage
+generateQnA("Machine Learning");
