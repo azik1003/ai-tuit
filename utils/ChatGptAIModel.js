@@ -33,4 +33,3 @@ async function generateQnA(topic) {
 }
 
 // Example Usage
-generateQnA("Machine Learning");
